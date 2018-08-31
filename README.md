@@ -149,6 +149,8 @@ b96978e880368cf9b37ab92ad10d6cc975e77b8"
 
 ### 脚本备注
 
+测试脚本和log已经被上传到服务器`/home/cTnode/python-graphenelib`, 检查`newtest2.py`.
+
 ```Python
 client = GrapheneAPI("47.91.22.22", 38092, "", "")
 ```
@@ -178,6 +180,7 @@ asset_symbol: the symbol or id of the asset to send
 memo: a memo to attach to the transaction. The memo will be encrypted in the transaction and readable for the receiver. There is no length limit other than the limit imposed by maximum transaction size, but transaction increase with transaction size
 broadcast: true to broadcast the transaction on the network
 ```
+相似地，可以根据[cli_wallet-doc](http://docs.bitshares.org/api/wallet-api.html#id1) 设计对应的Python脚本，执行和cli_wallet的交互；
 
 ## Reference
 
