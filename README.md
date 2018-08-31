@@ -34,10 +34,54 @@ sudo apt-get install libffi-dev libssl-dev python-dev
 pip3 install graphenelib
 ```
 
+## 测试脚本
+
+
+假设当前私链的区块生产间隔是1s，cli_wallet命令行钱包的开启的rpc监听端口是`30892`，则通过每个区块从账户nathan给账户gamma转账1000次的测试脚本如下：
+
+```Python
+
+
+import time
+import json
+from grapheneapi.grapheneapi import GrapheneAPI
+
+
+blockinterval    = 1
+numbertxperblock = 1000
+rounds = 5
+
+
+log = open("stress_test.log","a");
+
+
+if __name__ == '__main__':
+	client = GrapheneAPI("47.91.22.22", 38092, "", "")
+	k = 0
+	while k < rounds :
+		for i in range(0,numbertxperblock) :
+			print(i)
+			log.write(str(i))
+			res = client.transfer("dang-dang","apitestkn01","0.1", "DANG", "injectTest", True);
+			#print(json.dumps(res,indent=4))
+			log.write(json.dumps(res,indent=4))
+		k = k + 1
+		time.sleep(blockinterval)
+
+
+
+
+log.close()
+
+
+
+
+```
+
 
 ## Reference
 
-+ Python Graphene Doc `https://python-graphenelib.readthedocs.io/en/latest/`
++ [Python Graphene Doc](https://python-graphenelib.readthedocs.io/en/latest/)
 
 
 
