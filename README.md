@@ -186,7 +186,7 @@ broadcast: true to broadcast the transaction on the network
 ### 测试脚本
 
 
-[测试脚本](https://cdn.rawgit.com/DangDang-Chain/Python-Library-API/f9303474/testIMG.jpg)
+![测试脚本](https://cdn.rawgit.com/DangDang-Chain/Python-Library-API/f9303474/testIMG.jpg)
 
 以上为一段测试结果，我们向Dangdang-chain中注入了1000笔交易，平均交易时速在35TPS左右；
 
