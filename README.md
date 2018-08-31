@@ -79,6 +79,75 @@ log.close()
 ```
 
 
+
+```json
+root@iZ6wee92clbvvf28j9oojzZ:/home/cTnode/python-graphenelib# more stress_test.log
+0{
+    "ref_block_prefix": 2113389145,
+    "operations": [
+        [
+            0,
+            {
+                "to": "1.2.21",
+                "amount": {
+                    "asset_id": "1.3.0",
+                    "amount": 100
+                },
+                "fee": {
+                    "asset_id": "1.3.0",
+                    "amount": 200000
+                },
+                "from": "1.2.17",
+                "extensions": []
+            }
+        ]
+    ],
+    "signatures": [
+        "2007a68d9d3fcc1b0b27f2c00c98b5bd72a19f172a431f8c22da074d7270b470d5680b7beddaea3c85e10b4157b
+5addac4626d08959760e98dabd9e64d39ce5c75"
+    ],
+    "ref_block_num": 48911,
+    "extensions": [],
+    "expiration": "2018-08-27T20:44:25"
+}1{
+    "ref_block_prefix": 2113389145,
+    "operations": [
+        [
+            0,
+            {
+                "to": "1.2.21",
+                "amount": {
+                    "asset_id": "1.3.0",
+                    "amount": 100
+                },
+                "fee": {
+                    "asset_id": "1.3.0",
+                    "amount": 200000
+                },
+                "from": "1.2.17",
+                "extensions": []
+            }
+        ]
+    ],
+    "signatures": [
+        "1f3bc986e8269e34b759213f8a39d92917cfff193083fec7897e0fef47506268c47f975816f5d0691e090a81ae5
+b96978e880368cf9b37ab92ad10d6cc975e77b8"
+    ],
+    "ref_block_num": 48911,
+    "extensions": [],
+    "expiration": "2018-08-27T20:44:26"
+}2{
+    "ref_block_prefix": 2113389145,
+    "operations": [
+        [
+            0,
+            {
+                "to": "1.2.21",
+                "amount": {
+                    ...
+```
+
+
 ## Reference
 
 + [Python Graphene Doc](https://python-graphenelib.readthedocs.io/en/latest/)
