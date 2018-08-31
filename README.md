@@ -37,7 +37,7 @@ pip3 install graphenelib
 ## 测试脚本
 
 
-假设当前私链的区块生产间隔是1s，cli_wallet命令行钱包的开启的rpc监听端口是`30892`，则通过每个区块从账户nathan给账户gamma转账1000次的测试脚本如下：
+假设当前私链的区块生产间隔是1s，cli_wallet命令行钱包的开启的rpc监听端口是`30892`，则通过每个区块从账户`dang-dang`给账户`apitestkn01`转账1000次的测试脚本如下：
 
 ```Python
 
@@ -62,7 +62,7 @@ if __name__ == '__main__':
 		for i in range(0,numbertxperblock) :
 			print(i)
 			log.write(str(i))
-			res = client.transfer("dang-dang","apitestkn01","0.1", "DANG", "injectTest", True);
+			res = client.transfer("dang-dang","apitestkn01","0.1", "DANG","injectTest", True);
 			#print(json.dumps(res,indent=4))
 			log.write(json.dumps(res,indent=4))
 		k = k + 1
@@ -81,7 +81,7 @@ log.close()
 
 
 ```json
-root@iZ6wee92clbvvf28j9oojzZ:/home/cTnode/python-graphenelib# more stress_test.log
+$ more stress_test.log
 0{
     "ref_block_prefix": 2113389145,
     "operations": [
@@ -147,6 +147,37 @@ b96978e880368cf9b37ab92ad10d6cc975e77b8"
                     ...
 ```
 
+### 脚本备注
+
+```Python
+client = GrapheneAPI("47.91.22.22", 38092, "", "")
+```
+
+查看源代码[GrapheneAPI..](https://github.com/xeroc/python-graphenelib/blob/master/grapheneapi/grapheneapi.py#L30-L35)
+四个参数分别是IP/host, Port, username 和 password, 一般情况下默认后两项为空；
+
+```Python
+res = client.transfer("dang-dang","apitestkn01","0.1", "DANG","injectTest", True);
+```
+
+在连接上cli_Wallet之后，就可以调用cli_wallet内置的接口，比如`transaction` 对应在cli_wallet的接口为[Cli_wallet-Doc](http://docs.bitshares.org/api/wallet-api.html#_CPPv2N8graphene6wallet10wallet_api8transferE6string6string6string6string6stringb)
+
+```javascript
+signed_transaction graphene::wallet::wallet_api::transfer(string from, string to, string amount, string asset_symbol, string memo, bool broadcast = false)
+
+Transfer an amount from one account to another.
+
+Return
+the signed transaction transferring funds
+
+__Parameters__
+from: the name or id of the account sending the funds
+to: the name or id of the account receiving the funds
+amount: the amount to send (in nominal units to send half of a BTS, specify 0.5)
+asset_symbol: the symbol or id of the asset to send
+memo: a memo to attach to the transaction. The memo will be encrypted in the transaction and readable for the receiver. There is no length limit other than the limit imposed by maximum transaction size, but transaction increase with transaction size
+broadcast: true to broadcast the transaction on the network
+```
 
 ## Reference
 
