@@ -182,6 +182,15 @@ broadcast: true to broadcast the transaction on the network
 ```
 相似地，可以根据[cli_wallet-doc](http://docs.bitshares.org/api/wallet-api.html#id1) 设计对应的Python脚本，执行和cli_wallet的交互；
 
+
+### 测试脚本
+
+
+[测试脚本](https://cdn.rawgit.com/DangDang-Chain/Python-Library-API/f9303474/testIMG.jpg)
+
+以上为一段测试结果，我们向Dangdang-chain中注入了1000笔交易，平均交易时速在35TPS左右；
+
+
 ## Reference
 
 + [Python Graphene Doc](https://python-graphenelib.readthedocs.io/en/latest/)
