@@ -5,6 +5,12 @@
 
 ## 安装准备
 
+使用Python调用API必须确保cli_wallet处于开启/解锁的状态。
+
+```bash
+cli_wallet --wallet-file my-wallet.json --server-rpc-endpoint ws://127.0.0.1:38090 -r 0.0.0.0:38092 -H 0.0.0.0:38099 --chain-id 540a861abb52b7612a66438e1a25285f4543078a2b487461d70f6fc7d7ddcddf
+```
+
 
 
 
